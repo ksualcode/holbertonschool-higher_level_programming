@@ -11,7 +11,7 @@ int check_cycle(listint_t *list)
 	listint_t *uwu = list;
 
 	if (list == NULL)
-		return(-1);
+		return(0);
 
 	for (; uwu;)
 	{
