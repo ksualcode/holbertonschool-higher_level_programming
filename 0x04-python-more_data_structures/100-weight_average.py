@@ -12,4 +12,4 @@ def weight_average(my_list=[]):
             mul *= in_list[n]
         add += mul
 
-    return add / div 
+    return add / div
