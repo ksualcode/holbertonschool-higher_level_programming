@@ -1,0 +1,1 @@
+# Learning the handling of exceptions in Python
