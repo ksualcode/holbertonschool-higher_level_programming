@@ -1,2 +1,2 @@
 def raise_exception():
-    raise TypeError
+    print("{:d}".format((1, 2, 3)))
