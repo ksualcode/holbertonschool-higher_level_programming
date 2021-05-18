@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+''' Creates a class '''
+
+
 class Square:
     """ A square class """
     def __init__(self, size=0):
