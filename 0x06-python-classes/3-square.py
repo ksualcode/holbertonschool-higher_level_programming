@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-''' Square class with an init condition '''
+''' Square class that has a public method'''
 
 
 class Square:
@@ -14,3 +14,7 @@ class Square:
             raise ValueError("size must be >= 0")
 
         self.__size = size
+
+    def area(self):
+        """ Calculates the area of the square """
+        return self.__size ** 2
