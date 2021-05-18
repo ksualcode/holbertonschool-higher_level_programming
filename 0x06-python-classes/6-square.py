@@ -1,35 +1,34 @@
 #!/usr/bin/python3
-"""In this module you will find a class
-"Square" at the moment it does nothing"""
+''' Square class that has a getter'''
 
 
 class Square:
-    """In this class we save a data"""
+    """Square class with all attributes"""
     __size = 0
     __position = (0, 0)
 
     def __init__(self, size=0, position=(0, 0)):
-        """This is the constructor of the class"""
+        """Constructor of square"""
         self.size = size
         self.position = position
 
     def area(self):
-        """This function return area"""
-        return (self.__size * self.__size)
+        """Returns the area of the square"""
+        return (self.__size ** 2)
 
     @property
     def size(self):
-        """This property get size"""
+        """Size getter"""
         return (self.__size)
 
     @property
     def position(self):
-        """This property get position"""
+        """Getter of position"""
         return (self.__position)
 
     @size.setter
     def size(self, value):
-        """This property set size"""
+        """Sets the size of the square"""
         if type(value) != int:
             raise TypeError("size must be an integer")
         elif value < 0:
@@ -39,7 +38,7 @@ class Square:
 
     @position.setter
     def position(self, value):
-        """This property set position"""
+        """Set the position of a square"""
         if (type(value) != tuple or len(value) != 2 or
                 type(value[0]) != int or value[0] < 0 or
                 type(value[1]) != int or value[1] < 0):
@@ -47,7 +46,7 @@ class Square:
         self.__position = value
 
     def my_print(self):
-        """This function print square"""
+        """Method that prints a square"""
         if (self.__size == 0):
             print()
             return
