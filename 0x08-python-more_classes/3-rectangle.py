@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 " Module that creates a rectangle "
+
+
 class Rectangle:
     """
     Creates a rectangle class
@@ -48,7 +50,11 @@ class Rectangle:
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
+        """ Prints a rectangle """
         square = ""
+
+        if self.__width == 0 or self.__height == 0:
+            return square
 
         for i in range(self.height):
             square += "#" * self.width
