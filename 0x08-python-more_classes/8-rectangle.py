@@ -21,7 +21,6 @@ class Rectangle:
         print("Bye rectangle...")
         self.number_of_instances -= 1
 
-
     def __str__(self):
         """ Prints a rectangle """
         square = ""
