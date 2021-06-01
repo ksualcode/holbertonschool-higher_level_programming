@@ -1,5 +1,7 @@
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
+#The base geometry class tests
+
 #====================== Tests =====================
 
 >>> bg = BaseGeometry()
@@ -13,13 +15,13 @@ Traceback (most recent call last):
 TypeError: it can't be right must be an integer
 
 # Passing a list
->>> bg.integer_validator("now?", [60, 5, 007])
+>>> bg.integer_validator("now?", [1, 30, 8])
 Traceback (most recent call last):
     ...
 TypeError: now? must be an integer
 
 #  Passing a negative value
->>> bg.integer_validator("pepito", -69)
+>>> bg.integer_validator("pepito", -16)
 Traceback (most recent call last):
     ...
 ValueError: pepito must be greater than 0
@@ -37,10 +39,10 @@ Traceback (most recent call last):
 TypeError: elasti must be an integer
 
 # Passing a dictionary
->>> bg.integer_validator("Uwu Owo", {10, 0})
+>>> bg.integer_validator("book of shadows", {10, 0})
 Traceback (most recent call last):
     ...
-TypeError: Uwu Owo must be an integer
+TypeError: book of shadows must be an integer
 
 # Passing a list
 >>> bg.integer_validator("kk", [8, 69])
@@ -55,10 +57,10 @@ Traceback (most recent call last):
 TypeError: matrixiz must be an integer
 
 # Passing a tuple
->>> bg.integer_validator("1 y 2", (1, 2))
+>>> bg.integer_validator("matrixiz", (0, 2))
 Traceback (most recent call last):
     ...
-TypeError: 1 y 2 must be an integer
+TypeError: matrixiz must be an integer
 
 # Passing a boolean
 >>> bg.integer_validator("i'm super clever", True)
@@ -72,20 +74,20 @@ Traceback (most recent call last):
     ...
 TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
-# Giving an string instead of an int
->>> bg.integer_validator("jejeje", "amogus")
-Traceback (most recent call last):
-    ...
-TypeError: jejeje must be an integer
-
-# Trying to get the area... of what???
->>> bg.area()
-Traceback (most recent call last):
-...
-Exception: area() is not implemented
-
 # Giving just 1 arg for validator
 >>> bg.integer_validator("kiko")
 Traceback (most recent call last):
     ...
 TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+# Giving an string instead of an int
+>>> bg.integer_validator("jijiji", "impostor")
+Traceback (most recent call last):
+    ...
+TypeError: jijiji must be an integer
+
+# Trying to get the area... of what???
+>>> bg.area()
+Traceback (most recent call last):
+    ...
+Exception: area() is not implemented
