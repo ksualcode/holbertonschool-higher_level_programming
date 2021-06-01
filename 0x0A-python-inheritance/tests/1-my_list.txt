@@ -1,0 +1,28 @@
+1-my_list test module
+======================
+
+>>> mylist = __import__('1-my_list').MyList
+
+>>> a = mylist()
+>>> a.extend([])
+
+# 1st case
+>>> a.print_sorted()
+[]
+
+>>> a.extend([1, 7, 5])
+
+# 2nd case
+>>> a.print_sorted()
+[1, 5, 7]
+
+# 3rd case
+>> print(a)
+[1, 7, 5]
+
+>>> a.clear()
+>>> a.append(None)
+
+# 4th case
+>>> a.print_sorted()
+[None]
