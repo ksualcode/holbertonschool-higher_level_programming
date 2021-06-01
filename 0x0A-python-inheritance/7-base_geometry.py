@@ -2,15 +2,15 @@
 ''' Module with an empty class '''
 
 
-class BaseGeometry():
-    """ Class that's a superclass """
+class BaseGeometry:
+    ''' A Base Geometry class '''
     def area(self):
-        ''' raises an exception '''
+        ''' the area of the shape '''
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        ''' Validates the value that comes in '''
-        if type(value) is not int:
+        ''' validates an int value '''
+        if (type(value) != int):
             raise TypeError("{} must be an integer".format(name))
-        if value <= 0:
+        elif (value <= 0):
             raise ValueError("{} must be greater than 0".format(name))
