@@ -1,0 +1,24 @@
+7-base_geometry test file
+======================
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+>>> baseGeometry = BaseGeometry()
+>>> baseGeometry.integer_validator("Pasando un valor que nada que ver", None)
+Traceback (most recent call last):
+    ...
+TypeError: Pasando un valor que nada que ver must be an integer
+
+>>> baseGeometry.integer_validator("Pasando una lista", [1, 30, 8])
+Traceback (most recent call last):
+    ...
+TypeError: Pasando una lista must be an integer
+
+>>> baseGeometry.integer_validator("Esto no debe romper", 34)
+>>> baseGeometry.integer_validator("esta es una mega cadena super mega larga que de seguro no rompe nada", 1)
+
+>>> baseGeometry.integer_validator("esto no se lo que da", Null)
+Traceback (most recent call last):
+    ...
+TypeError: esto no se lo que da must be an integer
+
