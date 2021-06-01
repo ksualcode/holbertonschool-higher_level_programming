@@ -3,4 +3,5 @@
 
 
 class BaseGeometry():
+    """ Class that's a superclass """
     pass
