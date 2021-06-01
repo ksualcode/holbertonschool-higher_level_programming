@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 ''' Module with an empty class '''
+
+
 Rectangle = __import__('9-rectangle').Rectangle
+
 
 class Square (Rectangle):
     def __init__(self, size):
@@ -16,4 +19,3 @@ class Square (Rectangle):
     def __str__(self):
         ''' Prints a rectangle '''
         return "[Square] {}/{}".format(self.__size, self.__size)
-
