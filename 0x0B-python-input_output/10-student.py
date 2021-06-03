@@ -17,7 +17,7 @@ class Student():
         if (type(attrs) is list and all(type(i) is str for i in attrs)):
             for key in attrs:
                 if key in self.__dict__:
-                    my_dict.update({key : self.__dict__[key]})
+                    my_dict.update({key: self.__dict__[key]})
             return my_dict
 
         return self.__dict__
