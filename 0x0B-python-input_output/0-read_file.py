@@ -5,4 +5,5 @@
 def read_file(filename=""):
     ''' Function that reads a file '''
     with open(filename, "r", encoding="utf-/") as my_file:
-        print(my_file.read())
+        for line in my_file:
+            print(line, end="")
