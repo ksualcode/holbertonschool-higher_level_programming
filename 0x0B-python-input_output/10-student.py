@@ -13,10 +13,11 @@ class Student():
 
     def to_json(self, attrs=None):
         ''' Student class '''
-        my_dict = self.__dict__
-        if (type(attrs) == "list" and all(type(i) is str for i in attrs)):
+        my_dict = dict()
+        if (type(attrs) is list and all(type(i) is str for i in attrs)):
             for key in attrs:
-                if (key != d_key for d_key in my_dict):
-                    my_dict.pop(key)
-        
-        return my_dict
+                if key in self.__dict__:
+                    my_dict.update({key : self.__dict__[key]})
+            return my_dict
+
+        return self.__dict__
