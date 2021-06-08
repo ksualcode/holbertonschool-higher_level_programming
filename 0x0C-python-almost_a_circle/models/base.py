@@ -29,5 +29,25 @@ class Base():
         mlist = "[]"
         if list_objs is not None:
             mlist = cls.to_json_string([o.to_dictionary() for o in list_objs])
+
         with open("{}.json".format(cls.__name__), 'w') as file:
             file.write(mlist)
+
+    @staticmethod
+    def from_json_string(json_string):
+        ''' Converts a JSON stringt representation to List '''
+        if json_string is None:
+            return "[]"
+        return json.loads(json_string)
+    
+    @classmethod
+    def create(cls, **dictionary):
+        ''' Creates an instance '''
+        this_class = cls.__name__
+        if this_class == 'Square':
+            this_instance = cls(69)
+        elif this_class == 'Rectangle':
+            this_instance = cls(69, 420)
+
+        this_instance.update(dictionary)
+        return this_instance
