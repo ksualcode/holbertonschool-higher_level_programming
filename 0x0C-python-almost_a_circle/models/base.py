@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 ''' Module with a base class '''
-
 import json
+
 
 class Base():
     ''' Superclass for other classes '''
@@ -26,8 +26,8 @@ class Base():
     @classmethod
     def save_to_file(cls, list_objs):
         ''' Writes a JSON file '''
-        my_list = "[]"
+        mlist = "[]"
         if list_objs is not None:
-            my_list = cls.to_json_string([obj.to_dictionary() for obj in list_objs])
+            mlist = cls.to_json_string([o.to_dictionary() for o in list_objs])
         with open("{}.json".format(cls.__name__), 'w') as file:
-            file.write(my_list)
+            file.write(mlist)
