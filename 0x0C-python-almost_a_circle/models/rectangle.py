@@ -90,18 +90,18 @@ class Rectangle(Base):
             if "id" in kwargs:
                 self.id = kwargs["id"]
             if "width" in kwargs:
-                self.__width = kwargs["width"]
+                self.width = kwargs["width"]
             if "height" in kwargs:
-                self.__height = kwargs["height"]
+                self.height = kwargs["height"]
             if "x" in kwargs:
-                self.__x = kwargs["x"]
+                self.x = kwargs["x"]
             if "y" in kwargs:
-                self.__y = kwargs["y"]
+                self.y = kwargs["y"]
 
     def __str__(self):
         ''' prints '''
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
-            self.id, self.__x, self.__y, self.__width, self.__height)
+            self.id, self.x, self.y, self.width, self.height)
 
     @staticmethod
     def value_validator(value, name):
@@ -112,3 +112,8 @@ class Rectangle(Base):
             raise ValueError("{} must be > 0".format(name))
         elif value < 0:
             raise ValueError("{} must be >= 0".format(name))
+
+    def to_dictionary(self):
+        ''' Returns the dictionary of a Rectangle '''
+        new_dict = {'id': self.id, 'width': self.width, 'height': self.height, 'x': self.x, 'y': self.y}
+        return new_dict
