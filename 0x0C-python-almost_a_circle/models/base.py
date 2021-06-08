@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 ''' Module with a base class '''
 import json
+import os
 
 
 class Base():
@@ -48,6 +49,19 @@ class Base():
             this_instance = cls(69)
         elif this_class == 'Rectangle':
             this_instance = cls(69, 420)
-
-        this_instance.update(dictionary)
+        this_instance.update(**dictionary)
         return this_instance
+
+    @classmethod
+    def load_from_file(cls):
+        ''' Returns list of instances '''
+        my_list = []
+        filename = "{}.json".format(cls.__name__)
+        if not os.path.exists(filename):
+            return my_list
+
+        with open(filename, "r") as my_file:
+            for i in cls.from_json_string(my_file.read()):
+                my_list.append(cls.create(**i))
+
+        return my_list
