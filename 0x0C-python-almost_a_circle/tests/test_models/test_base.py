@@ -35,7 +35,7 @@ class TestBase(unittest.TestCase):
         b6 = Base(4)
         self.assertEqual(b6.id, 4)
         b7 = Base()
-        self.assertEqual(b7.id, 3)
+        self.assertEqual(b7.id, 1)
 
     def test_1_3(self):
         ''' aaaaaaaaaaaaaa '''
