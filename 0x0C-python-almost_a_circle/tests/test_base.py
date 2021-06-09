@@ -16,17 +16,27 @@ class TestBase(unittest.TestCase):
     def test_1(self):
         """create an instance and check id."""
 
-        self.assertEqual(Base().id, 1)
-        self.assertEqual(Base().id, 2)
-        self.assertEqual(Base(32).id, 32)
-        self.assertEqual(Base(2000).id, 2000)
-        self.assertEqual(Base(0).id, 0)
-        self.assertEqual(Base(-10).id, -10)
-        self.assertEqual(Base().id, 3)
+        b0 = Base()
+        self.assertEqual(b0.id, 1)
+        b1 = Base()
+        self.assertEqual(b1.id, 2)
+        b2 = Base(24)
+        self.assertEqual(b2.id, 24)
+        b3 = Base(1024)
+        self.assertEqual(b3.id, 1024)
+        b4 = Base(0)
+        self.assertEqual(b4.id, 0)
+        b5 = Base(-10)
+        self.assertEqual(b5.id, -10)
+        b6 = Base(4)
+        self.assertEqual(b6.id, 4)
+        b7 = Base()
+        self.assertEqual(b7.id, 3)
 
-        b = Base()
-        self.assertEqual(type(b), Base)
-        self.assertTrue(isinstance(b, Base))
+
+        b7 = Base()
+        self.assertEqual(type(b7), Base)
+        self.assertTrue(isinstance(b7, Base))
 
 if __name__ == '__main__':
     unittest.main()
