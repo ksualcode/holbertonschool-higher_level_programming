@@ -9,6 +9,8 @@ class TestBase(unittest.TestCase):
     ''' The test base class '''
 
     def setUp(self):
+        ''' setup def '''
+
         Base._Base__nb_objects = 0
 
     def test_1(self):
@@ -27,12 +29,16 @@ class TestBase(unittest.TestCase):
     
     def test_1_2(self):
         ''' fill test '''
+
         b5 = Base(-10)
         self.assertEqual(b5.id, -10)
         b6 = Base(4)
         self.assertEqual(b6.id, 4)
         b7 = Base()
         self.assertEqual(b7.id, 3)
+
+    def test_1_3(self):
+        ''' aaaaaaaaaaaaaa '''
 
         b7 = Base()
         self.assertEqual(type(b7), Base)
