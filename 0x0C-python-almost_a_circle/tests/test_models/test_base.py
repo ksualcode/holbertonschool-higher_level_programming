@@ -3,8 +3,6 @@
 
 import unittest
 from models.base import Base
-# from models.rectangle import Rectangle
-# from models.square import Square
 
 
 class TestBase(unittest.TestCase):
@@ -26,13 +24,15 @@ class TestBase(unittest.TestCase):
         self.assertEqual(b3.id, 1024)
         b4 = Base(0)
         self.assertEqual(b4.id, 0)
+    
+    def test_1_2(self):
+        ''' fill test '''
         b5 = Base(-10)
         self.assertEqual(b5.id, -10)
         b6 = Base(4)
         self.assertEqual(b6.id, 4)
         b7 = Base()
         self.assertEqual(b7.id, 3)
-
 
         b7 = Base()
         self.assertEqual(type(b7), Base)
