@@ -12,7 +12,7 @@ function secondBig () {
     if (parseInt(input[2 + i]) > biggest || biggest === undefined) {
       second = biggest;
       biggest = parseInt(input[2 + i]);
-    } else if (second === undefined) {
+    } else if (second === undefined || second < parseInt(input[2 + i])) {
       second = parseInt(input[2 + i]);
     }
   }
