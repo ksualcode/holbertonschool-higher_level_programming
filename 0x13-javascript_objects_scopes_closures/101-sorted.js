@@ -7,5 +7,6 @@ Object.entries(dict).forEach(id => {
   } else {
     ordDict[id[1]] = [id[0]];
   }
-
 });
+
+console.log(ordDict);
