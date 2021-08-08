@@ -8,7 +8,7 @@ if __name__ == "__main__":
                                 user=argv[1], passwd=argv[2], db=argv[3])
     cur = conn.cursor()
     sqlquery = "SELECT * FROM states "
-    sqlquery += "WHERE name LIKE BINARY '{}'".format(argv[4])"
+    sqlquery += "WHERE name LIKE BINARY '{}'".format(argv[4])
     sqlquery += " ORDER BY id ASC;"
     cur.execute(sqlquery)
     query_rows = cur.fetchall()
