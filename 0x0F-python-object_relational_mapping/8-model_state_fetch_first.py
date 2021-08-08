@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-''' Selects states that start with N '''
+''' Prints the first state '''
 from sys import argv
 from model_state import Base, State
 from sqlalchemy import (create_engine)

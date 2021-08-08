@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-''' Selects all states '''
+''' Prints the first state '''
 from sys import argv
 from model_state import Base, State
 from sqlalchemy import (create_engine)
@@ -14,6 +14,11 @@ if __name__ == "__main__":
 
     Session = sessionmaker(engine)
     session = Session()
+    boolean = False
     for state in session.query(State).order_by(State.id).all():
-        print("{}: {}".format(state.id, state.name))
+        if (argv[4] == state.name):
+            boolean = True
+            print("{}: {}".format(state.id, state.name))
+    if (not boolean):
+        print("Not found")
     session.close()

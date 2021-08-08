@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-''' Prints the first state '''
+''' Prints a state with an "a" on it '''
 from sys import argv
 from model_state import Base, State
 from sqlalchemy import (create_engine)
