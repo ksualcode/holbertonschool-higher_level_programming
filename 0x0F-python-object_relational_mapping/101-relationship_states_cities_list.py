@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-''' Prints the first state '''
+"""Prints the first state"""
+
 from sys import argv
 from relationship_state import Base, State, City
 from sqlalchemy import (create_engine)
@@ -17,5 +18,5 @@ if __name__ == "__main__":
     for state in session.query(State).order_by(State.id).all():
         print("{}: {}".format(state.id, state.name))
         for city in state.cities:
-            print("	{}: {}".format(city.id, city.name))
+            print("\t{}: {}".format(city.id, city.name))
     session.close()
