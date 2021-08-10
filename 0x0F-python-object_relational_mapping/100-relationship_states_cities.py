@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 ''' Prints the first state '''
 from sys import argv
-from model_state import Base, State
+from relationship_state import Base, State, City
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
 
@@ -14,8 +14,10 @@ if __name__ == "__main__":
 
     Session = sessionmaker(engine)
     session = Session()
-    for state in session.query(State).all():
-        if 'a' in state.name:
-            session.delete(state)
+    new_state = State(name='California')
+    new_city = City(name='San Francisco')
+    new_state.cities.append(new_city)
+    session.add(new_state)
+    session.add(new_city)
     session.commit()
     session.close()
