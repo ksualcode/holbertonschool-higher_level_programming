@@ -6,4 +6,7 @@ if __name__ == "__main__":
     from sys import argv
 
     respuesta = get(argv[1])
-    print(respuesta.headers.get('X-Request-Id'))
+    if (respuesta.status_code <= 400):
+        print(respuesta.text)
+    else:
+        print("Error code: " + str(respuesta.status_code))
