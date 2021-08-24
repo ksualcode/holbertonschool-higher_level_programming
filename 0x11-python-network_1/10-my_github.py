@@ -6,5 +6,6 @@ if __name__ == "__main__":
     from sys import argv
 
     head = {'Accept': 'application/vnd.github.v3+json'}
-    respuesta = get('https://api.github.com/user', auth=(argv[1], argv[2]), headers=head)
+    respuesta = get('https://api.github.com/user',
+                    auth=(argv[1], argv[2]), headers=head)
     print(respuesta.json().get('id'))
