@@ -7,4 +7,3 @@ if __name__ == "__main__":
 
     respuesta = get(argv[1])
     print(respuesta.headers['X-Request-Id'])
-    
