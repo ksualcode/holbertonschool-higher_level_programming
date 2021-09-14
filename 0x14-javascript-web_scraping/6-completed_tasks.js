@@ -16,7 +16,6 @@ request(options, function (error, response, body) {
     const tasks = (JSON.parse(body));
     tasks.forEach(task => {
       if (task.userId !== lastUser) {
-        console.log(task.userId);
         counter[lastUser] = count;
         lastUser = task.userId;
         count = 0;
