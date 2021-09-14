@@ -13,9 +13,9 @@ request(options, function (error, response, body) {
     const movies = JSON.parse(body).results;
     let counter = 0;
     for (let i = 0; i < movies.length; i++) {
-      const chars = movies[i].characters;
-      for (let j = 0; j < chars.length; j++) {
-        if (chars[j] === 'https://swapi-api.hbtn.io/api/people/18/') {
+      const characters = movies[i].characters;
+      for (let j = 0; j < characters.length; j++) {
+        if (characters[j].includes('/18/')) {
           counter++;
           break;
         }
